@@ -6,26 +6,26 @@ using Xunit;
 
 namespace oop_assignment_2_2025_78097.Tests
 {
-    // ============================
+    
     // ExamQuestion_1 Tests
-    // ============================
+  
     public class ExamQuestion1Tests
     {
         [Theory]
         [InlineData("0831234567", true)]
         [InlineData("0851234567", true)]
         [InlineData("0891234567", true)]
-        [InlineData("0812345678", false)]   // Wrong prefix
-        [InlineData("083 1234567", false)]  // Contains space
-        [InlineData("08312345678", false)]  // Too long
+        [InlineData("0812345678", false)]   
+        [InlineData("083 1234567", false)]  
+        [InlineData("08312345678", false)]  
         [InlineData("", false)]
         [InlineData(null, false)]
         public void IsValidIrishMobile_WorksAsExpected(string? number, bool expected)
         {
-            // Act
+           
             var result = ExamQuestion_1.IsValidIrishMobile(number);
 
-            // Assert
+            
             Assert.Equal(expected, result);
         }
 
@@ -37,7 +37,7 @@ namespace oop_assignment_2_2025_78097.Tests
         [InlineData("Diamond", 20)]
         [InlineData("Elite", 25)]
         [InlineData("VIP", 30)]
-        [InlineData(" Unknown ", 0)]  // Trimmed but not a known level
+        [InlineData(" Unknown ", 0)]  
         [InlineData("", 0)]
         [InlineData(null, 0)]
         public void GetDiscountPercentage_ReturnsExpected(string? level, int expected)
@@ -47,9 +47,7 @@ namespace oop_assignment_2_2025_78097.Tests
         }
     }
 
-    // ============================
-    // ExamQuestion_2 Tests
-    // ============================
+   
     public class ExamQuestion2Tests
     {
         [Theory]
@@ -106,9 +104,9 @@ namespace oop_assignment_2_2025_78097.Tests
         }
     }
 
-    // ============================
+    
     // ExamQuestion_3 Tests
-    // ============================
+    
     public class ExamQuestion3Tests
     {
         [Fact]
@@ -128,7 +126,7 @@ namespace oop_assignment_2_2025_78097.Tests
             double? result = ExamQuestion_3.CalculateAverageRating(ratings);
 
             Assert.NotNull(result);
-            Assert.Equal(4.0, result.Value, 5); // within tolerance
+            Assert.Equal(4.0, result.Value, 5); 
         }
 
         [Fact]
@@ -136,8 +134,8 @@ namespace oop_assignment_2_2025_78097.Tests
         {
             var products = new List<(string Name, List<int> Ratings)>
             {
-                ("Laptop", new List<int> { 5, 4, 4, 5, 3 }), // avg 4.2
-                ("EmptyProduct", new List<int>())             // no ratings
+                ("Laptop", new List<int> { 5, 4, 4, 5, 3 }), 
+                ("EmptyProduct", new List<int>())             
             };
 
             var summaries = ExamQuestion_3.GetProductSummaries(products);
@@ -187,16 +185,16 @@ namespace oop_assignment_2_2025_78097.Tests
         }
     }
 
-    // ============================
+    
     // ExamQuestion_4 Tests
-    // ============================
+    
     public class ExamQuestion4Tests
     {
         [Theory]
         [InlineData(0, "00000")]
         [InlineData(42, "00042")]
         [InlineData(12345, "12345")]
-        [InlineData(999999, "999999")] // more than 5 digits – no truncation
+        [InlineData(999999, "999999")] // more than 5 digits â€“ no truncation
         public void FormatAsFiveDigits_AlwaysFiveDigitsOrMore(int input, string expected)
         {
             var result = ExamQuestion_4.FormatAsFiveDigits(input);
@@ -204,9 +202,9 @@ namespace oop_assignment_2_2025_78097.Tests
         }
 
         [Theory]
-        [InlineData(1234.5, "€1,234.50")]
-        [InlineData(0.0, "€0.00")]
-        [InlineData(1000000.99, "€1,000,000.99")]
+        [InlineData(1234.5, "â‚¬1,234.50")]
+        [InlineData(0.0, "â‚¬0.00")]
+        [InlineData(1000000.99, "â‚¬1,000,000.99")]
         public void FormatPrice_UsesEuroSymbolAndTwoDecimals(double input, string expected)
         {
             var price = (decimal)input;
