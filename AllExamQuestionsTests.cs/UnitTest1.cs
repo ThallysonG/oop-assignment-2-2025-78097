@@ -7,7 +7,7 @@ using Xunit;
 namespace oop_assignment_2_2025_78097.Tests
 {
     
-    // ExamQuestion_1 Tests
+  
   
     public class ExamQuestion1Tests
     {
@@ -105,7 +105,7 @@ namespace oop_assignment_2_2025_78097.Tests
     }
 
     
-    // ExamQuestion_3 Tests
+    
     
     public class ExamQuestion3Tests
     {
@@ -186,7 +186,7 @@ namespace oop_assignment_2_2025_78097.Tests
     }
 
     
-    // ExamQuestion_4 Tests
+   
     
     public class ExamQuestion4Tests
     {
