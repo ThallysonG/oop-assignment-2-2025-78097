@@ -12,14 +12,14 @@ namespace oop_assignment_2_2025_78097.Models
 
             var products = GetSampleProducts();
 
-            // 1. Print each product’s average rating (or "No ratings available")
+           
             var summaries = GetProductSummaries(products);
             foreach (var line in summaries)
             {
                 Console.WriteLine(line);
             }
 
-            // 2. Print the top-rated product
+            
             var topSummary = GetTopRatedProductSummary(products);
             if (!string.IsNullOrEmpty(topSummary))
             {
@@ -38,9 +38,7 @@ namespace oop_assignment_2_2025_78097.Models
             };
         }
 
-        /// <summary>
-        /// Returns the average rating as a double, or null if ratings is empty.
-        /// </summary>
+       
         public static double? CalculateAverageRating(List<int> ratings)
         {
             if (ratings == null || ratings.Count == 0)
@@ -49,12 +47,7 @@ namespace oop_assignment_2_2025_78097.Models
             return ratings.Average();
         }
 
-        /// <summary>
-        /// Returns lines like:
-        /// "Laptop: Average Rating = 4.2"
-        /// or
-        /// "ProductName: No ratings available"
-        /// </summary>
+        
         public static List<string> GetProductSummaries(
             List<(string Name, List<int> Ratings)> products)
         {
@@ -78,11 +71,7 @@ namespace oop_assignment_2_2025_78097.Models
             return result;
         }
 
-        /// <summary>
-        /// Returns a line like:
-        /// "The top-rated product is Keyboard with an average rating of 4.8"
-        /// If all products have no ratings, returns null.
-        /// </summary>
+       
         public static string? GetTopRatedProductSummary(
             List<(string Name, List<int> Ratings)> products)
         {
