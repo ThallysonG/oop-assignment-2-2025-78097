@@ -15,8 +15,7 @@ namespace oop_assignment_2_2025_78097.Models
             Console.WriteLine("2C: RegisterUser(15) => " + RegisterUser(15));
         }
 
-        // 2.A – divide two integers, handle divide by 0
-        // Returns either the result as a string, or "Cannot divide by 0"
+        
         public static string Divide(int dividend, int divisor)
         {
             try
@@ -30,9 +29,7 @@ namespace oop_assignment_2_2025_78097.Models
             }
         }
 
-        // 2.B – parse a string as int
-        // On success: returns the parsed number as string
-        // On failure: "Invalid number entered."
+       
         public static string ParseNumber(string input)
         {
             try
@@ -46,9 +43,7 @@ namespace oop_assignment_2_2025_78097.Models
             }
         }
 
-        // 2.C – RegisterUser(int age)
-        // Throws and catches ArgumentOutOfRangeException internally
-        // Returns friendly messages instead of crashing
+       
         public static string RegisterUser(int age)
         {
             try
